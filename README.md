@@ -1,24 +1,28 @@
-# README
+# 研ぎ陣
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### サイトの概要
+主張型の研ぎのサービスでの事前の依頼と仕上がりの時間を
+確認できる予約サイトです。
+### サイトテーマ
+いつでもどこでも予約と情報の確認ができるサイトです。
 
-Things you may want to cover:
+### テーマを選んだ理由
+・私の親族に個人経営で刃物の研ぎを行なっている方がおり、個人経営での出張サービスは、現場にいる人しか利用できない限定的な環境が多いと言う話を聞きました。なので現場にいる人以外の方にも認知をしていただく為に、事前の注文機能や情報の掲載ができるサイトを作ることで、個人経営の職種の手助けができるのではないかと思いこのテーマにしました。
 
-* Ruby version
+### ターゲットユーザ
+地域の主婦層、飲食業を営む方
 
-* System dependencies
+### 主な利用シーン
+刃物の研ぎを依頼するとき
+## 設計書
 
-* Configuration
 
-* Database creation
+## チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/1bIrKIQDDZl5WqR--e-IpvFbked6L4YOZlJhEFwk1_7Y/edit?usp=sharing
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
