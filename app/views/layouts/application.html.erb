@@ -19,24 +19,24 @@
            <% if admin_signed_in? %><!--管理者側のヘッダー表示-->
             <ul class="nav__wrapper">
               <li class="nav__item">
-                <%= link_to "会員一覧"admin_customers_path, class: 'nav-link text-light  ml-2'%>
+                <%= link_to "会員一覧",admin_customers_path, class: 'nav-link text-light  ml-2'%>
               </li>
               <li class="nav__item">
-                <%= link_to "依頼一覧"admin_root_path, class: 'nav-link text-light  ml-2'%>
+                <%= link_to "依頼一覧",admin_root_path, class: 'nav-link text-light  ml-2'%>
               </li>
               <li class="nav__item">
-                <%= link_to "ログアウト" destroy_admin_session_path, class: 'nav-link text-light  ml-2', method: :delete%>
+                <%= link_to "ログアウト", destroy_admin_session_path, class: 'nav-link text-light  ml-2', method: :delete%>
               </li><!--ここまで  -->
           　<% elsif customer_signed_in? %><!--顧客側のヘッダー表示-->
           　<span class="mt-2" style="color: white;">ようこそ、<%= current_customer.last_name %>さん</span>
           　<li class="nav-item">
-                <%= link_to "マイページ"public_customer_path, class: 'nav-link text-light  ml-2'%>
+                <%= link_to "マイページ",public_customer_path, class: 'nav-link text-light  ml-2'%>
               </li>
           　<li class="nav-item">
-                <%= link_to "依頼履歴" end_users_my_page_path, class: 'nav-link text-light  ml-2'%>
+                <%= link_to "依頼履歴",end_users_my_page_path, class: 'nav-link text-light  ml-2'%>
               </li>
               <li class="nav__item">
-                <%= link_to "ログアウト" destroy_customer_session_path, class: 'nav-link text-light  ml-2', method: :delete%>
+                <%= link_to "ログアウト",destroy_customer_session_path, class: 'nav-link text-light  ml-2', method: :delete%>
               </li><!--ここまで  -->
         </nav>
       </div>
