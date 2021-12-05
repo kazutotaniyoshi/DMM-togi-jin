@@ -1,90 +1,101 @@
 <div class="container">
-  <div class="row">
+    <%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', class: 'new_customers', local: true do |f| %>
+    <%= render "public/shared/error_messages", resource: Customer.new %>
     <h2>新規登録</h2>
-    <div class="row mb-3">
-    <div class="col-md-2 themed-grid-col"></div>
-      <div class="col-md-8 themed-grid-col">
-        <%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', class: 'new_customers', local: true do |f| %>
-        <%#= render "public/shared/error_messages", resource: Customer.new %>
-          <!--名字記入欄-->
-          <div class="col-sm-6">
-            <div class="field">
-              <%= f.label "名字" %><br />
-              <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
-            </div>
-          </div>
-          <!--名前記入欄-->
-          <div class="col-sm-6">
-            <div class="field">
-              <%= f.label "名" %><br />
-              <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
-            </div>
-          </div>
-          <!--名字カナ記入欄-->
-           <div class="col-sm-6">
-             <div class="field">
-                <%= f.label "名字カナ" %><br />
-                <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %>
-            </div>
-            <!--名前カナ記入欄-->
-            <div class="col-sm-6">
-              <div class="field">
-                <%= f.label "メイ" %><br />
-                <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
-              </div>
-            </div>
-              <!--メール記入欄-->
-            </div>
-          <div class="col-12">
-            <div class="field">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-            </div>
-          </div>
-            <!--郵便番号記入欄-->
-          <div class="col-12">
-            <div class="field">
-              <%= f.label "郵便番号" %><br />
-              <%= f.text_field :postcode, autofocus: true, autocomplete: "postcode" %>
-            </div>
-          </div>
-          <!--住所記入欄-->
-          <div class="col-12">
-            <div class="field">
-              <%= f.label "住所" %><br />
-              <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
-            </div>
-          </div>
-          <!--電話番号の記入欄-->
-          <div class="col-12">
-            <div class="field">
-              <%= f.label "電話番号" %><br />
-              <%= f.text_field :tel, autofocus: true, autocomplete: "tel" %>
-            </div>
-          </div>
-          <!--パスワード記入欄-->
-          <div class="col-12">
-            <div class="field">
-              <%= f.label "パスワード" %>
-              <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
-              <% end %><br />
-              <%= f.password_field :password, autocomplete: "new-password" %>
-            </div>
-          </div>
-          <!--確認用パスワード記入欄-->
-          <div class="col-12">
-            <div class="field">
-              <%= f.label "確認用パスワード" %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-            </div>
-          </div>
-        <div class="actions">
-          <%= f.submit "ログイン" %>
+    <div class="row">
+      <div class="col">
+        <!--名字記入欄-->
+        <div class="field">
+          <%= f.label "名字" %><br />
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
         </div>
-          <% end %>
+      </div>
+      <!--名前記入欄-->
+      <div class="col">
+        <div class="field">
+          <%= f.label "名" %><br />
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
         </div>
-        <%= render "public/shared/links" %>
+      </div>
     </div>
-    <div class="col-md-2 themed-grid-col"></div>
+    <!--名字カナ記入欄-->
+    <div class="row">
+      <div class="col">
+        <div class="field">
+            <%= f.label "名字カナ" %><br />
+            <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %>
+        </div>
+      </div>
+      <!--名前カナ記入欄-->
+      <div class="col">
+        <div class="field">
+          <%= f.label "メイ" %><br />
+          <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!--郵便番号記入欄-->
+      <div class="col">
+        <div class="field">
+          <%= f.label "郵便番号" %><br />
+          <%= f.text_field :postcode, autofocus: true, autocomplete: "postcode" %>
+        </div>
+      </div>
+      <!--住所記入欄-->
+      <div class="col">
+        <div class="field">
+          <%= f.label "住所" %><br />
+          <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!--電話番号の記入欄-->
+      <div class="col">
+        <div class="field">
+          <%= f.label "電話番号" %><br />
+          <%= f.text_field :tel, autofocus: true, autocomplete: "tel" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!--パスワード記入欄-->
+      <div class="col-6">
+        <div class="field">
+          <%= f.label "パスワード" %>
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+      </div>
+      <!--確認用パスワード記入欄-->
+      <div class="col">
+        <div class="field">
+          <%= f.label "確認用パスワード" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+      </div>
+    </div>
+    <!--メール記入欄-->
+     <div class="row">
+       <div class="col-6">
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-5">
+        <div class="actions">
+          <%= f.submit "登録する" %>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+    <% end %>
+  </div>
 

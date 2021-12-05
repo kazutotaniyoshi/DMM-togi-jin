@@ -1,57 +1,53 @@
 <!DOCTYPE html>
-<html>
   <head>
     <title>研ぎ陣</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <header class="site-header">
+  <body>
+    <header class="site-header.bg-dark">
       <div class="wrapper site-header__wrapper">
-        <a href="#" class="brand">Brand</a>
         <nav class="nav">
           <button class="nav__toggle" aria-expanded="false" type="button">
             メニュー
           </button>
-           <% if admin_signed_in? %><!--管理者側のヘッダー表示-->
-            <ul class="nav__wrapper">
-              <li class="nav__item">
-                <%= link_to "会員一覧",admin_customers_path, class: 'nav-link text-light  ml-2'%>
-              </li>
-              <li class="nav__item">
-                <%= link_to "依頼一覧",admin_root_path, class: 'nav-link text-light  ml-2'%>
-              </li>
-              <li class="nav__item">
-                <%= link_to "ログアウト", destroy_admin_session_path, class: 'nav-link text-light  ml-2', method: :delete%>
-              </li><!--ここまで  -->
-          　<% elsif customer_signed_in? %><!--顧客側のヘッダー表示-->
-          　<span class="mt-2" style="color: white;">ようこそ、<%= current_customer.last_name %>さん</span>
-          　<li class="nav-item">
-                <%= link_to "マイページ",public_customer_path, class: 'nav-link text-light  ml-2'%>
-              </li>
-          　<li class="nav-item">
-                <%= link_to "依頼履歴",end_users_my_page_path, class: 'nav-link text-light  ml-2'%>
-              </li>
-              <li class="nav__item">
-                <%= link_to "ログアウト",destroy_customer_session_path, class: 'nav-link text-light  ml-2', method: :delete%>
-              </li><!--ここまで  -->
+            <% if admin_signed_in? %>
+              <ul class="nav__wrapper">
+                <li class="nav__item">
+                  <%= link_to "会員一覧",admin_customers_path, class: 'nav-link text-warning  ml-2'%>
+                </li>
+                <li class="nav__item">
+                  <%= link_to "依頼一覧",admin_root_path, class: 'nav-link text-warning  ml-2'%>
+                </li>
+                <li class="nav__item">
+                  <%= link_to "ログアウト", destroy_admin_session_path, class: 'nav-link text-warning  ml-2', method: :delete%>
+                </li>
+              　<% elsif customer_signed_in? %>
+              　   <span class="mt-2" style="color: white;">ようこそ、<%= current_customer.last_name %>さん</span>
+              　   <li class="nav-item">
+                    <%= link_to "マイページ",public_customer_path, class: 'nav-link text-warning  ml-2'%>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "依頼履歴",end_users_my_page_path, class: 'nav-link text-warning  ml-2'%>
+                  </li>
+                  <li class="nav__item">
+                    <%= link_to "ログアウト",destroy_customer_session_path, class: 'nav-link text-warning  ml-2', method: :delete%>
+                  </li>
+                <% else %>
+                  <li class="nav-item">
+                    <%= link_to"新規登録", new_customer_registration_path, class: 'nav-link text-warning  ml-2' %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to"ログイン",new_customer_session_path, class: 'nav-link text-warning  ml-2'%>
+                  </li>
+              </ul>
+            <% end %>
         </nav>
       </div>
     </header>
-
-  <body>
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
   </body>
-  <footer class="text-white text-center"><!--フッター設定-->
-      <div class="container">
-          <div class="mx-auto">
-            <p class="pt-3" style="font-size:15px;">
-            </p>
-            <p style="font-size:12px;">Copyright ©研ぎ陣 All Rights Reserved.</p>
-          </div>
-      </div>
-    </footer>
-</html>
