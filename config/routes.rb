@@ -16,7 +16,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 
   namespace :public do
     root to: "homes#top"
-    resources :customers, only:[:show,:edit,:udate]
+    resources :customers, only:[:show,:edit,:update]
       resources :request, only:[:new,:show,:create,:index]do
         collection do
         get 'complete'

@@ -32,16 +32,14 @@ ActiveRecord::Schema.define(version: 2021_12_03_070935) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    #追加したカラム------------
-    t.string "last_name"#名前
-    t.string "first_name"#名字
-    t.string "last_name_kana"#カナ名前
-    t.string "first_name_kana"#カナ名字
-    t.string "postcode"#郵便番号
-    t.string "address"#住所
-    t.string "tel"#電話番号
-    t.boolean "is_valid"#退会フラグ
-    #--------------------------
+    t.string "last_name"
+    t.string "first_name"
+    t.string "last_name_kana"
+    t.string "first_name_kana"
+    t.string "postcode"
+    t.string "address"
+    t.string "tel"
+    t.boolean "is_valid"
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
