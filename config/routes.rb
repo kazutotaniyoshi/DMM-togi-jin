@@ -16,6 +16,8 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 
   namespace :public do
     root to: "homes#top"
+    get 'customers/unsubscribe'#退会の設定
+    patch 'customers/withdraw'#退会の設定
     resources :customers, only:[:show,:edit,:update]
       resources :request, only:[:new,:show,:create,:index]do
         collection do
