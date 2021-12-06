@@ -19,7 +19,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     get 'customers/unsubscribe'#退会の設定
     patch 'customers/withdraw'#退会の設定
     resources :customers, only:[:show,:edit,:update]
-      resources :request, only:[:new,:show,:create,:index]do
+      resources :requests, only:[:new,:show,:create,:index]do
         collection do
         get 'complete'
         end
@@ -28,8 +28,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     namespace :admin do
       root to: "homes#top"
       resources :customers,only:[:index,:show,:edit,:update]
-      resources :requests, only:[:show]
+      resources :requests, only:[:show,:new,:create,:index,:complate]
     end
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
