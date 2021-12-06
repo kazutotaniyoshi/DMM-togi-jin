@@ -1,0 +1,54 @@
+<div class="container">
+  <%= form_with model:@request, url: new_public_request_path, local:true do |f| %>
+  <div class="row">
+    <!--依頼品の入力欄-->
+    <div class="col">
+      <div class="field">
+        <%= f.label "予約の品物" %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <!--来店日時-->
+    <div class="col">
+      <div class="field">
+        <%= f.label "来店日時" %><br />
+        <%= f.text_field :time, autofocus: true, autocomplete: "time" %>
+      </div>
+    </div>
+  </div>
+ <div class="row">
+    <!--要望欄-->
+    <div class="col">
+      <div class="field">
+        <%= f.label "要望欄" %><br />
+        <%= f.text_field :comment, autofocus: true, autocomplete: "comment" %>
+      </div>
+    </div>
+  <div class="row">
+    <!--配達希望の選択-->
+     <div class="col">
+       <p class="text-center h3">
+        仕上がり後のお届けを希望しますか？
+      </p>
+       <p class="text-center text-danger">
+        ※お届けの場合は営業時間、予約状況で<br>
+        当日中にお届けできない場合もございますので<br>
+        予めご了承ください
+      </p>
+      <%= f.label :status, 'する', value: 1 %>
+        <%= f.radio_button :status, '1' %>
+        <%= f.label :status, 'しない', value: 0 %>
+        <%= f.radio_button :status, '0' %>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-5">
+      <div class="actions">
+        <%= f.submit "予約する" %>
+      </div>
+    </div>
+    <div class="col"></div>
+</div>
+
+<% end %>
