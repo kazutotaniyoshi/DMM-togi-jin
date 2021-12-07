@@ -1,57 +1,74 @@
-<form>
+<div class="container text-center">
+  <br>
+  <br>
   <%= form_with model:@request, url: new_public_request_path, local:true do |f| %>
-    <div class="form-row">
-      <div class="form-group col-md-2"></div>
-      <div class="form-group col-md-4">
-        <br>
-        <br>
-        <label for="inputName4">予約の品物名</label>
-        <input type="text" class="form-control" id="inputName4" placeholder="品物名を入力">
+  <div class="text-center h2">予約フォーム</div>
+  <br>
+  <br>
+  <div class="row h3">
+    <div class="col-2"></div>
+    <!--依頼品の入力欄-->
+    <div class="col-4">
+      <div class="field">
+        <%= f.label  "予約の品物" %><br>
+        <%= f.text_field :name, autofocus: true, autocomplete: "研ぎたい物" %>
       </div>
-      <div class="form-group col-md-4">
-         <br>
-         <br>
-        <label for="inputTime4">来店日時</label>
-        <input type="text" class="form-control" id="inputTime4" placeholder="日にちと時間を入力">
+    </div>
+      <!--来店日時-->
+    <div class="col-4">
+      <div class="field">
+        <%= f.label "来店日" %><br />
+        <%= f.date_field :time, autofocus: true, autocomplete: "time" %>
       </div>
-      <div class="form-group col-md-2"></div>
     </div>
-    <div class="form-row">
-      <div class="form-group col-md-2"></div>
-        <div class="form-group col-md-8">
-           <br>
-           <br>
-           <br>
-          <label for="inputComment4">要望欄（なければ空欄でOK）</label>
-          <input type="text" class="form-control" id="inputComment4" placeholder="要望などがあればご記入ください">
-        </div>
-        <div class="form-group col-md-2"></div>
+    <div class="col-2"></div>
+  </div>
+  <br>
+  <br>
+  <div class="row h3">
+    <!--要望欄-->
+    <div class="col">
+      <div class="field">
+        <%= f.label "要望欄(ある場合のみ)" %><br />
+        <%= f.text_field :comment, autofocus: true, autocomplete: "comment" %>
+      </div>
     </div>
+    </div>
+    <br>
+    <br>
+    <br>
     <div class="row">
       <!--配達希望の選択-->
        <div class="col">
-         <p class="text-center h3">
-          仕上がり後のお届けを希望しますか？
-        </p>
-         <p class="text-center text-danger">
-          ※お届けの場合は営業時間、予約状況で<br>
-          当日中にお届けできない場合もございますので<br>
-          予めご了承ください
-        </p>
-        <div class="container text-center h2">
-          <%= f.label :status, 'する', value: 1 %>
-          <%= f.radio_button :status, '1' %>
-          <%= f.label :status, 'しない', value: 0 %>
-          <%= f.radio_button :status, '0' %>
-        </div>
-        <div class="container text-center h2">
-          <div class="actions">
-            <%= f.submit "予約する" %>
+          <p class="text-center h3">
+            仕上がり後のお届けを希望しますか？
+          </p>
+           <p class="text-center text-danger">
+            ※お届けの場合は営業時間、予約状況で<br>
+            当日中にお届けできない場合もございますので<br>
+            予めご了承ください
+          </p>
+          <div class="h4">
+            <%= f.label :status, 'する', value: 1 %>
+            <%= f.radio_button :status, '1' %>
+            <%= f.label :status, 'しない', value: 0 %>
+            <%= f.radio_button :status, '0' %>
+          </div>
+          <br>
+          <br>
+          <div class="row h3">
+          <div class="col"></div>
+            <div class="col-5">
+              <div class="actions ">
+                <%= f.submit "予約する",class:"bg-success text-white" %>
+              </div>
+            </div>
+          <div class="col"></div>
           </div>
         </div>
-      </div>
     </div>
   <% end %>
-    <br>
-    <br>
-</form>
+  <br>
+  <br>
+  <br>
+</div>
