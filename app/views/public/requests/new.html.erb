@@ -1,7 +1,7 @@
 <div class="container text-center">
   <br>
   <br>
-  <%= form_with model:@request, url: new_public_request_path, local:true do |f| %>
+  <%= form_with model:@request, url: "/public/requests", local:true do |f| %>
   <div class="text-center h2">予約フォーム</div>
   <br>
   <br>
@@ -11,7 +11,7 @@
     <div class="col-4">
       <div class="field">
         <%= f.label  "予約の品物" %><br>
-        <%= f.text_field :name, autofocus: true, autocomplete: "研ぎたい物" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
       </div>
     </div>
       <!--来店日時-->
@@ -49,10 +49,10 @@
             予めご了承ください
           </p>
           <div class="h4">
-            <%= f.label :status, 'する', value: 1 %>
-            <%= f.radio_button :status, '1' %>
-            <%= f.label :status, 'しない', value: 0 %>
-            <%= f.radio_button :status, '0' %>
+            <%= f.label :status, 'する'%>
+            <%= f.radio_button :status, 'する' %>
+            <%= f.label :status, 'しない'%>
+            <%= f.radio_button :status, 'しない' %>
           </div>
           <br>
           <br>

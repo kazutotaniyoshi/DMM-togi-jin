@@ -18,7 +18,7 @@ root to: "public/homes#top"
     get 'customers/unsubscribe'#退会の設定
     patch 'customers/withdraw'#退会の設定
     resources :customers, only:[:show,:edit,:update]
-      resources :requests, only:[:new,:show,:create,:index]do
+      resources :requests, only:[:new,:show,:create,:index,:destroy]do
         collection do
         get 'complete'
         end
