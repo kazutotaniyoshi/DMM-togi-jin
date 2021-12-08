@@ -14,6 +14,7 @@
 ### 主な利用シーン
 ・刃物の研ぎを依頼するとき
 ## 設計書
+https://docs.google.com/spreadsheets/d/1e21nuw-xKEki7xget6ltDwKvrOMgng6V-DYzAMZQFys/edit?usp=sharing
 
 
 ## チャレンジ要素一覧

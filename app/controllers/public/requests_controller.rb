@@ -13,7 +13,7 @@ class Public::RequestsController < ApplicationController
     @request = Request.new(request_params)
     @request.customer_id = current_customer.id
     @request.save
-    #redirect_to public_request_index
+    redirect_to complete_public_requests_path
   end
 
   def complate
