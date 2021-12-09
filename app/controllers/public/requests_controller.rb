@@ -13,6 +13,7 @@ class Public::RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
+    @request.customer_id = current_customer.id
     @request.save
     redirect_to complete_public_requests_path
   end

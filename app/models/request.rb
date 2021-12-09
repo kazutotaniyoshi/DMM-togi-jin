@@ -1,4 +1,4 @@
 class Request < ApplicationRecord
-   has_many :requests, dependent: :destroy
+   belongs_to :customer
   enum status: {"しない":0,"する":1}
 end
