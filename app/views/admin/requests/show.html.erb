@@ -1,0 +1,47 @@
+<div class="container">
+  <table class="table table-dark">
+    <br>
+    <br>
+      <p class="h2 text-center">
+        依頼の詳細
+      </p>
+    <br>
+    <br>
+    <br>
+    <thead>
+      <tr>
+        <th scope="col">予約日時</th>
+        <th scope="col">顧客名</th>
+        <th scope="col">品物</th>
+        <th scope="col">配送希望</th>
+        <th scope="col">要望</th>
+         <th scope="col">仕上げ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @request.time %></td>
+        <tb><%= request.customer.last_name %><%= request.customer.first_name %></tb>
+        <td><%= @request.name %></td>
+        <td><%= @request.status %></td>
+        <td><%= @request.comment %></td>
+      </tr>
+    </tbody>
+  </table>
+    <br>
+    <br>
+    <br>
+  <div class="text-center h2 text-white">
+    <button type="button" class="btn btn-danger">
+      <%= link_to "予約を取り消す", public_request_path(@request),class: 'text-white',method: :delete %>
+    </button>
+  </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>

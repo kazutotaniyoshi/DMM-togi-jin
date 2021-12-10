@@ -21,11 +21,12 @@
       <% @requests.each do |request| %>
       <tr>
         <td><%= request.time %></td>
+        <tb></tb>
         <tb><%= request.customer.last_name %><%= request.customer.first_name %></tb>
         <td><%= request.name %></td>
         <td><%= request.status %></td>
         <td><%= request.comment %></td>
-        <td><%= link_to "詳細へ", public_request_path(request), class: 'text-white' %></td>
+        <td><%= link_to "詳細へ", _path(request), class: 'text-white' %></td>
       </tr>
       <% end %>
     </tbody>
