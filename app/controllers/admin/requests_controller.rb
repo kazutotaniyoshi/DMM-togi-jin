@@ -1,5 +1,7 @@
 class Admin::RequestsController < ApplicationController
   def show
-    @request = Requests.find(params[:id])
+    @request = Request.find(params[:id])
+    @inform = Inform.find(params[:id])
   end
+
 end

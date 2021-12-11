@@ -15,26 +15,35 @@
         <th scope="col">品物</th>
         <th scope="col">配送希望</th>
         <th scope="col">要望</th>
-         <th scope="col">仕上げ</th>
+        <th scope="col">仕上げ</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><%= @request.time %></td>
-        <tb><%= request.customer.last_name %><%= request.customer.first_name %></tb>
+        <tb><%= @request.customer.last_name %><%= @request.customer.first_name %></tb>
         <td><%= @request.name %></td>
         <td><%= @request.status %></td>
         <td><%= @request.comment %></td>
+        <td><%= @request.making_status %></td>
       </tr>
     </tbody>
   </table>
+  <div class="text-center h2 text-white">
+    <td>お知らせ</td>
+    <td><%= @inform.inform %></td>
     <br>
     <br>
     <br>
   <div class="text-center h2 text-white">
-    <button type="button" class="btn btn-danger">
-      <%= link_to "予約を取り消す", public_request_path(@request),class: 'text-white',method: :delete %>
-    </button>
+    <%= form_with model: @inform do |f| %>
+    <%= f.select :maiking_satatus, [["0~30分", "0~30分"], ["30~60分", "30~60分"], ["60~90分", "60~90分"], ["90分以上", "90分以上"]], include_blank: "選択して下さい" %>
+    <% end %>
+    <%= f.submit '送信'%>
+    <%= form_with(model:[@request, @inform]) do |f| %>
+      <%= f.text_area :inform, rows:'5',placeholder: "お知らせを入力" %>
+      <%= f.submit "完了" %>
+    <% end %>
   </div>
     <br>
     <br>

@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3 class="my-5">会員一覧</h3>
+      <table class="table">
+        <thead>
+          <tr class="table-active">
+            <th>会員ID</th>
+            <th>氏名</th>
+            <th>電話番号</th>
+            <th>会員の有無</th>
+          </tr>
+        </thead>
+        <% @customers.each do |customer| %>
+        <tbody>
+          <tr>
+            <td><%= customer.id %></td>
+            <td><%= link_to customer.last_name, admin_customer_path(customer) %><%= link_to customer.first_name, admin_customer_path(customer) %></td>
+            <td nowrap><%= customer.tel %></td>
+            <td>
+              <% if customer.is_valid == false%>
+                <span class="text-secondary">退会</span>
+              <% else %>
+                <span class="text-success">有効</span>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

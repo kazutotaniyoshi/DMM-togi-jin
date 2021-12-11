@@ -28,7 +28,7 @@ root to: "public/homes#top"
       root to: "homes#top"
       resources :customers,only:[:index,:show,:edit,:update]
       
-      resources :requests, only:[:show,:update]
+      resources :requests, only:[:show,:create,:destroy]
     end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
