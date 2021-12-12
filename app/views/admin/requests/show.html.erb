@@ -29,21 +29,29 @@
       </tr>
     </tbody>
   </table>
-  <div class="text-center h2 text-white">
+  <div class="text-center h2">
     <td>お知らせ</td>
     <td><%= @inform.inform %></td>
+  </div>
     <br>
     <br>
     <br>
-  <div class="text-center h2 text-white">
-    <%= form_with model: @inform do |f| %>
-    <%= f.select :maiking_satatus, [["0~30分", "0~30分"], ["30~60分", "30~60分"], ["60~90分", "60~90分"], ["90分以上", "90分以上"]], include_blank: "選択して下さい" %>
-    <% end %>
-    <%= f.submit '送信'%>
-    <%= form_with(model:[@request, @inform]) do |f| %>
-      <%= f.text_area :inform, rows:'5',placeholder: "お知らせを入力" %>
-      <%= f.submit "完了" %>
-    <% end %>
+  <%= form_with model: [:admin,@inform] do |f| %>
+  <%= f.hidden_field :request_id, :value => params[:id] %>
+  <div class="text-center h2">
+    <td>仕上げ時間の選択</td>
+    <td><%= f.select :making_satatus, [["0~30分", "0~30分"], ["30~60分", "30~60分"], ["60~90分", "60~90分"], ["90分以上", "90分以上"]], include_blank: "選択して下さい" %></td>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="text-center h2">
+    <td><%= f.text_area :inform, rows:'5',placeholder: "お知らせを入力" %></td>
+  </div>
+  <div class="text-center h2">
+    <td><%= f.submit "完了" %></td>
+  </div>
+  <% end %>
   </div>
     <br>
     <br>

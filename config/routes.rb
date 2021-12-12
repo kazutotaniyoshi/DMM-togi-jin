@@ -27,8 +27,9 @@ root to: "public/homes#top"
     namespace :admin do
       root to: "homes#top"
       resources :customers,only:[:index,:show,:edit,:update]
-      
+
       resources :requests, only:[:show,:create,:destroy]
+      resources :informs
     end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -7,7 +7,6 @@ class CreateRequests < ActiveRecord::Migration[5.2]
       t.string    :date
       t.string    :time
       t.integer   :making_status
-      t.text      :inform
 
       t.timestamps
     end

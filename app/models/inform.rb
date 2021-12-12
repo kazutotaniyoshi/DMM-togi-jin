@@ -1,3 +1,4 @@
 class Inform < ApplicationRecord
-   belongs_to :admin
+   belongs_to :request
+
 end
