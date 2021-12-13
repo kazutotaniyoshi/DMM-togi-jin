@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2021_12_11_093108) do
     t.text "comment"
     t.string "date"
     t.string "time"
-    t.integer "making_status"
+    t.string "making_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "customer_id"

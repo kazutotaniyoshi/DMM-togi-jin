@@ -30,6 +30,6 @@ class Public::RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:name, :time, :comment, :status)
+    params.require(:request).permit(:date,:name, :time, :comment, :status)
   end
 end

@@ -6,7 +6,7 @@ class CreateRequests < ActiveRecord::Migration[5.2]
       t.text      :comment
       t.string    :date
       t.string    :time
-      t.integer   :making_status
+      t.string   :making_status
 
       t.timestamps
     end

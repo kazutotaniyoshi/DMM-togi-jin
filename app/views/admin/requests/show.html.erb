@@ -10,7 +10,8 @@
     <br>
     <thead>
       <tr>
-        <th scope="col">予約日時</th>
+        <th>予約日</th>
+        <th scope>来店時間</th>
         <th scope="col">顧客名</th>
         <th scope="col">品物</th>
         <th scope="col">配送希望</th>
@@ -20,8 +21,9 @@
     </thead>
     <tbody>
       <tr>
+        <td><%= @request.date %></td>
         <td><%= @request.time %></td>
-        <tb><%= @request.customer.last_name %><%= @request.customer.first_name %></tb>
+        <td><%= @request.customer.last_name %><%= @request.customer.first_name %></td>
         <td><%= @request.name %></td>
         <td><%= @request.status %></td>
         <td><%= @request.comment %></td>
@@ -31,6 +33,7 @@
   </table>
   <div class="text-center h2">
     <td>お知らせ</td>
+    <br>
     <td><%= @inform.inform %></td>
   </div>
     <br>
@@ -40,7 +43,7 @@
   <%= f.hidden_field :request_id, :value => params[:id] %>
   <div class="text-center h2">
     <td>仕上げ時間の選択</td>
-    <td><%= f.select :making_satatus, [["0~30分", "0~30分"], ["30~60分", "30~60分"], ["60~90分", "60~90分"], ["90分以上", "90分以上"]], include_blank: "選択して下さい" %></td>
+    <td><%= f.select :making_status, [["0~30分", "0~30分"], ["30~60分", "30~60分"], ["60~90分", "60~90分"], ["90分以上", "90分以上"]], include_blank: "選択して下さい" %></td>
   </div>
   <br>
   <br>
