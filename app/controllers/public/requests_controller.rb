@@ -1,4 +1,5 @@
 class Public::RequestsController < ApplicationController
+  before_action :authenticate_customer!
   def index
     @requests = Request.all
   end
