@@ -1,0 +1,24 @@
+<div class="text-center">
+  <br>
+  <br>
+  <h2>本当に退会しますか？</h2>
+  <div>
+    <p>退会する場合は、『退会する』をクリックしてください。</p>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div>
+    <td><%= link_to '退会しない', public_customer_path(current_customer),class: "btn btn-success rounded-pill mt-3" %></tb>
+    <br>
+    <br>
+    <td><%= link_to "退会する", public_customers_withdraw_path,class: "btn btn-danger rounded-pill mt-3", method: :patch, "data-confirm" => "本当に退会しますか？"%></td>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
