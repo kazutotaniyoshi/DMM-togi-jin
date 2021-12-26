@@ -9,4 +9,3 @@ Admin.create!(
   email: "togijin@1",
   password: "111222"
 )#管理側のテスト用アカウントのデータ
-word

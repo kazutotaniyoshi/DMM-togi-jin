@@ -7,7 +7,7 @@ class Admin::InformsController < ApplicationController
     @inform.save
     @request.making_status = params[:inform][:making_status]
     @request.save
-    redirect_to  admin_requests_path
+    redirect_to admin_request_path(@request.id)
   end
 
   def update
