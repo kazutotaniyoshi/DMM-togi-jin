@@ -10,7 +10,8 @@
     <br>
     <thead>
       <tr>
-        <th scope="col">予約日時</th>
+        <th scope="col">予約日</th>
+        <th scope="col">来店時間</th>
         <th scope="col">品物</th>
         <th scope="col">配送希望</th>
         <th scope="col">要望</th>
@@ -19,6 +20,7 @@
     <tbody>
       <% @requests.each do |request| %>
       <tr>
+        <td><%= request.date %></td>
         <td><%= request.time %></td>
         <td><%= request.name %></td>
         <td><%= request.status %></td>
