@@ -32,7 +32,13 @@
   <div class="text-center h2">
     <td>お知らせ</td>
     <br>
-    <td><%= @inform.inform %></td>
+    <td>
+      <% if @inform.present? %>
+      <%= @inform.inform %>
+      <% else %>
+      お知らせはありません。
+      <% end %>
+      </td>
   </div>
     <br>
     <br>
