@@ -1,7 +1,8 @@
 class Public::RequestsController < ApplicationController
   before_action :authenticate_customer!
   def index
-    @requests = Request.all
+    @requests = Request.where(customer: current_customer.id)
+
   end
 
   def new

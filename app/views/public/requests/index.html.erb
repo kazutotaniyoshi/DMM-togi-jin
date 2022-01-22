@@ -18,16 +18,16 @@
       </tr>
     </thead>
     <tbody>
-      <% @requests.each do |request| %>
-      <tr>
-        <td><%= request.date %></td>
-        <td><%= request.time %></td>
-        <td><%= request.name %></td>
-        <td><%= request.status %></td>
-        <td><%= request.comment %></td>
-        <td><%= link_to "詳細へ", public_request_path(request), class: 'text-white' %></td>
-      </tr>
-      <% end %>
+        <% @requests.each do |request| %>
+        <tr>
+          <td><%= request.date %></td>
+          <td><%= request.time %></td>
+          <td><%= request.name %></td>
+          <td><%= request.status %></td>
+          <td><%= request.comment %></td>
+          <td><%= link_to "詳細へ", public_request_path(request), class: 'text-white' %></td>
+        </tr>
+        <% end %>
     </tbody>
   </table>
   <br>

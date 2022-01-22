@@ -20,12 +20,14 @@
     </thead>
     <tbody>
       <tr>
+        <% if @request.user == current_customer %>
         <td><%= @request.date %></td>
         <td><%= @request.time %></td>
         <td><%= @request.name %></td>
         <td><%= @request.status %></td>
         <td><%= @request.comment %></td>
         <td><%= @request.making_status %></td>
+        <%end%>
       </tr>
     </tbody>
   </table>
@@ -44,9 +46,11 @@
     <br>
     <br>
   <div class="text-center h2 text-white">
+    <% if @request.user == current_customer %>
     <button type="button" class="btn btn-danger">
       <%= link_to "予約を取り消す", public_request_path(@request),class: 'text-white',method: :delete %>
     </button>
+    <% end %>
   </div>
     <br>
     <br>
