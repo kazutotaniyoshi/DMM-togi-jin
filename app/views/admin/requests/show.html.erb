@@ -43,7 +43,7 @@
   <%= f.hidden_field :request_id, :value => params[:id] %>
   <div class="text-center h2">
     <td>仕上げ時間の選択</td>
-    <td><%= f.select :making_status, [["0~30分", "0~30分"], ["30~60分", "30~60分"], ["60~90分", "60~90分"], ["90分以上", "90分以上"]], include_blank: "選択して下さい" %></td>
+    <td><%= f.select :making_status, Request.making_statuses.keys, selected: @request.making_status %></td>
   </div>
   <br>
   <br>

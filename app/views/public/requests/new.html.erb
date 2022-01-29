@@ -1,6 +1,15 @@
 <div class="container text-center">
   <br>
   <br>
+  <% if @request.errors.any? %>
+    <ul>
+      <% @request.errors.full_messages.each do |message| %>
+        <li>
+          <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
   <%= form_with model:@request, url: "/public/requests", local:true do |f| %>
   <div class="text-center h2">予約フォーム</div>
   <br>

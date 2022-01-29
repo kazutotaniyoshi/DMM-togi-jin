@@ -4,9 +4,9 @@ class CreateRequests < ActiveRecord::Migration[5.2]
       t.string    :name,   null: false
       t.integer   :status, null: false
       t.text      :comment
-      t.string    :date
+      t.date      :date
       t.string    :time
-      t.string   :making_status
+      t.integer   :making_status
 
       t.timestamps
     end

@@ -10,15 +10,14 @@ class Public::RequestsController < ApplicationController
   end
 
   def show
-
     @request = Request.find(params[:id])
     @inform = Inform.where(request_id: params[:id])[0]
-
   end
 
   def create
     @request = Request.new(request_params)
     @request.customer_id = current_customer.id
+    @request.making_status = '未対応'
     if@request.save
     redirect_to complete_public_requests_path
     else
