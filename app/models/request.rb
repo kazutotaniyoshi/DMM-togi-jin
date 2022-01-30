@@ -3,12 +3,12 @@ class Request < ApplicationRecord
    has_one :inform
   enum status: {"しない":0,"する":1}#配送のステータス
   enum making_status: {
-    "未対応": 0,
+    "確認": 0,
     "0~30分": 1,
     "30~60分": 2,
     "60~90分": 3,
     "90分以上": 4
-  }
+  }#仕上げ時間ステータス
 
    validates :date, presence: true
    validates :time, presence: true

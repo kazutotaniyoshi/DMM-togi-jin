@@ -17,7 +17,7 @@ class Public::RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @request.customer_id = current_customer.id
-    @request.making_status = '未対応'
+    @request.making_status = '確認中'
     if@request.save
     redirect_to complete_public_requests_path
     else
