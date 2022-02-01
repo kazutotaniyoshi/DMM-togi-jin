@@ -3,17 +3,24 @@ class Request < ApplicationRecord
    has_one :inform
   enum status: {"しない":0,"する":1}#配送のステータス
   enum making_status: {
-    "確認": 0,
+    "確認中": 0,
     "0~30分": 1,
     "30~60分": 2,
     "60~90分": 3,
     "90分以上": 4
   }#仕上げ時間ステータス
+  enum shop_name:{
+      "木崎グルメランド": 0,
+      "スーパーバリュー（前川店）": 1,
+      "スーパーバリュー(伊刈店)": 2,
+      "JA安行直売所": 3
+  }#予約する場所
 
    validates :date, presence: true
    validates :time, presence: true
    validates :status, presence: true
    validates :name, presence: true
+   validates :shop_name, presence: true
 
    validate :date_bfore
     def date_bfore

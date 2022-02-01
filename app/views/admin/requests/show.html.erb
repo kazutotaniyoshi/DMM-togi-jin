@@ -13,6 +13,7 @@
         <th>予約日</th>
         <th scope>来店時間</th>
         <th scope="col">顧客名</th>
+        <th scope="col">店名</th>
         <th scope="col">品物</th>
         <th scope="col">配送希望</th>
         <th scope="col">要望</th>
@@ -24,6 +25,7 @@
         <td><%= @request.date %></td>
         <td><%= @request.time %></td>
         <td><%= @request.customer.last_name %><%= @request.customer.first_name %></td>
+        <td><%= @request.shop_name %></td>
         <td><%= @request.name %></td>
         <td><%= @request.status %></td>
         <td><%= @request.comment %></td>
@@ -31,8 +33,10 @@
       </tr>
     </tbody>
   </table>
+  <br>
+  <br>
   <div class="text-center h2">
-    <td>お知らせ</td>
+    <td>【お知らせ】</td>
     <br>
     <td><%= @inform.inform %></td>
   </div>

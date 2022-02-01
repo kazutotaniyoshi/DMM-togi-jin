@@ -15,6 +15,13 @@
   <br>
   <br>
   <div class="row h3">
+    <div class="col-12">
+      <div class="field">
+        <%= f.label  "来店する店舗" %><br>
+        <%= f.select :shop_name, Request.shop_names.keys, selected: @request.shop_name %>
+      </div>
+      <br>
+    </div>
     <!--依頼品の入力欄-->
     <div class="col-12">
       <div class="field">
@@ -22,6 +29,8 @@
         <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
       </div>
     </div>
+    <br>
+    <br>
     <div class="col-2"></div>
       <!--来店日-->
     <div class="col-4">
@@ -33,7 +42,7 @@
     <!--来店時間-->
     <div class="col-4">
       <div class="field">
-        <%= f.label "来店日" %><br />
+        <%= f.label "来店時間" %><br />
         <%= f.time_field :time, autofocus: true, autocomplete: "time" %>
       </div>
     </div>
