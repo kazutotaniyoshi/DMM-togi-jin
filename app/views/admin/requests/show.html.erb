@@ -48,7 +48,8 @@
   <div class="text-center h2">
     <td>仕上げ時間の選択</td>
     <td><%= f.select :making_status, Request.making_statuses.keys, selected: @request.making_status %></td>
-    <!--making_statuses.keysで現在の現在の値を引き出している-->
+    <!--making_statuses.keysでenumで設定した内容を表示させる(この際のカラム名は複数形にするのがルール)-->
+    <!--@request.making_statusで現在DBに入っているデータの値を引き出している-->
   </div>
   <br>
   <br>
