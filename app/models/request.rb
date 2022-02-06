@@ -1,7 +1,10 @@
 class Request < ApplicationRecord
    belongs_to :customer
    has_one :inform
-  enum status: {"しない":0,"する":1}#配送のステータス
+  enum status: {
+        "配送の希望なし":0,
+        "配送の希望あり":1
+  }#配送のステータス
   enum making_status: {
     "確認中": 0,
     "0~30分": 1,

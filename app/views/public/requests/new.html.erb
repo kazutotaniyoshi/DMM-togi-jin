@@ -74,10 +74,7 @@
             予めご了承ください
           </p>
           <div class="h4">
-            <%= f.label :status, 'する'%>
-            <%= f.radio_button :status, 'する' %>
-            <%= f.label :status, 'しない'%>
-            <%= f.radio_button :status, 'しない' %>
+            <%= f.select :status, Request.status.keys, selected: @request.status %>
           </div>
           <br>
           <br>
